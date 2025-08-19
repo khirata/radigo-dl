@@ -15,3 +15,5 @@ done
 radigo rec -id=$3 -s=$4
 chown 1000:1000 output/*.aac
 cp output/*.aac /root/audios
+
+nordvpn d
