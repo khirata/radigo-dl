@@ -38,4 +38,3 @@ COPY --from=builder /bin/radigo /usr/local/bin
 COPY radigo-dl.sh /usr/local/bin
 
 ENTRYPOINT /etc/init.d/nordvpn start && sleep 5 && /usr/local/bin/radigo-dl.sh "$@"
-CMD bash
