@@ -3,10 +3,12 @@
 nordvpn login --token $(< /run/secrets/nordvpn.txt) || exit 1
 
 # Connect to local VPN server in the station area
+echo "$(date --iso-8601="seconds") $(basename $0) $1 $2 $3 $4"
 nordvpn c $1 $2
 while
     ! $(radigo area | grep -q $3)
 do
+    radigo area
     nordvpn d
     nordvpn c $1 $2
 done
